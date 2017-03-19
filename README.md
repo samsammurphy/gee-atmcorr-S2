@@ -20,7 +20,7 @@ The easiest way to install Py6S and all dependencies (including 6S) is through t
 `conda config --add channels conda-forge`  
 `conda install py6s`
 
-For more information please see the relevant docs.
+For more information on how to install the prerequisites please see the relevant docs.
 
 - [Py6S](http://py6s.readthedocs.io/en/latest/installation.html)
 - [Google Earth Engine Python API](https://developers.google.com/earth-engine/python_install)
