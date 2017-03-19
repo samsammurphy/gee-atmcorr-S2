@@ -11,7 +11,7 @@ Atmospheric correction of Sentinel 2 imagery in Google Earth Engine.
 
 ### Py6S
 
-Py6S is a Python interface to the 6S radiative transfer code. 6S is written in FORTRAN and used by NASA/USGS for the LEDAPS (Landsat) and MODIS surface reflectance products. 
+[Py6S](http://py6s.readthedocs.io/en/latest/introduction.html) is a Python interface to the 6S radiative transfer code. 6S is written in FORTRAN and used by NASA/USGS for the LEDAPS (Landsat) and MODIS surface reflectance products. 
 
 ### Installation
 
