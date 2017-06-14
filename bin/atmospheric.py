@@ -14,7 +14,8 @@ AOT = Atmospheric.aerosol(geom,date)
 import ee
 
 class Atmospheric():
-
+  
+  @staticmethod
   def round_date(date,xhour):
     """
     rounds a date of to the closest 'x' hours
@@ -26,6 +27,7 @@ class Atmospheric():
     HH = H.divide(xhour).round().multiply(xhour)
     return date.fromYMD(y,m,d).advance(HH,'hour')
   
+  @staticmethod
   def round_month(date):
     """
     round date to closest month
@@ -86,6 +88,7 @@ class Atmospheric():
     # Point geometry required
     centroid = geom.centroid()
        
+    @staticmethod
     def ozone_measurement(centroid,O3_date):
       
       # filtered ozone collection
@@ -101,6 +104,7 @@ class Atmospheric():
       
       return ozone
       
+    @staticmethod
     def ozone_fill(centroid,O3_date):
       """
       Gets our ozone fill value (i.e. mean value for that doy and latlon)
@@ -153,6 +157,7 @@ class Atmospheric():
       fill value
     """
     
+    @staticmethod
     def aerosol_fill(date):
       """
       MODIS AOT fill value for this month (i.e. no data gaps)
@@ -162,6 +167,7 @@ class Atmospheric():
                .rename(['AOT_550'])
                
                
+    @staticmethod
     def aerosol_this_month(date):
       """
       MODIS AOT original data product for this month (i.e. some data gaps)
@@ -186,6 +192,7 @@ class Atmospheric():
       return img    
         
   
+    @staticmethod
     def get_AOT(AOT_band,geom):
       """
       AOT scalar value for target
