@@ -15,7 +15,6 @@ import ee
 
 class Atmospheric():
   
-  @staticmethod
   def round_date(date,xhour):
     """
     rounds a date of to the closest 'x' hours
@@ -27,7 +26,6 @@ class Atmospheric():
     HH = H.divide(xhour).round().multiply(xhour)
     return date.fromYMD(y,m,d).advance(HH,'hour')
   
-  @staticmethod
   def round_month(date):
     """
     round date to closest month
@@ -45,7 +43,6 @@ class Atmospheric():
     # return closest start of month
     return ee.Date(ee.Algorithms.If(d2.gt(d1),m1,m2))
   
-  @staticmethod
   def water(geom,date):
     """
     Water vapour column above target at time of image aquisition.
@@ -74,7 +71,6 @@ class Atmospheric():
     
     return water_Py6S_units
   
-  @staticmethod
   def ozone(geom,date):
     """
     returns ozone measurement from merged TOMS/OMI dataset
@@ -88,7 +84,7 @@ class Atmospheric():
     # Point geometry required
     centroid = geom.centroid()
        
-    @staticmethod
+
     def ozone_measurement(centroid,O3_date):
       
       # filtered ozone collection
@@ -104,7 +100,7 @@ class Atmospheric():
       
       return ozone
       
-    @staticmethod
+
     def ozone_fill(centroid,O3_date):
       """
       Gets our ozone fill value (i.e. mean value for that doy and latlon)
@@ -146,7 +142,6 @@ class Atmospheric():
     return ozone_Py6S_units
       
 
-  @staticmethod
   def aerosol(geom,date):
     """
     Aerosol Optical Thickness.
@@ -157,7 +152,7 @@ class Atmospheric():
       fill value
     """
     
-    @staticmethod
+
     def aerosol_fill(date):
       """
       MODIS AOT fill value for this month (i.e. no data gaps)
@@ -167,7 +162,7 @@ class Atmospheric():
                .rename(['AOT_550'])
                
                
-    @staticmethod
+
     def aerosol_this_month(date):
       """
       MODIS AOT original data product for this month (i.e. some data gaps)
@@ -192,7 +187,7 @@ class Atmospheric():
       return img    
         
   
-    @staticmethod
+
     def get_AOT(AOT_band,geom):
       """
       AOT scalar value for target
