@@ -1,6 +1,6 @@
 ### Introduction
 
-Atmospheric correction of Sentinel 2 imagery in Google Earth Engine. 
+Atmospheric correction of Sentinel 2 imagery in Google Earth Engine using [Py6S](http://py6s.readthedocs.io/en/latest/).
 
 ### Installation
 
