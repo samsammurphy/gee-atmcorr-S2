@@ -15,8 +15,8 @@ The following [docker](https://www.docker.com/community-edition) container has a
 This repo has the following rerequisites
 
 - [Python 3.x](https://www.python.org/downloads/)
-- [Google Earth Engine Python API](https://developers.google.com/earth-engine/python_install)
-- [Jupyter Notebook](http://jupyter.readthedocs.io/en/latest/install.html)
+- [Google Earth Engine Python API](https://developers.google.com/earth-engine/python_install_manual)
+- [Jupyter](http://jupyter.readthedocs.io/en/latest/install.html)
 - [Py6S](http://py6s.readthedocs.io/en/latest/installation.html)
 
 ### Usage
