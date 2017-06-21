@@ -2,26 +2,45 @@
 
 Atmospheric correction of Sentinel 2 imagery in Google Earth Engine. 
 
-### Prerequisites
+### Installation
 
-- Python
+#### Recommended: Docker
+
+The following [docker](https://www.docker.com/community-edition) container has all dependencies to run the code in this repository
+
+`docker pull samsammurphy/ee-python3-jupyter-atmcorr:v1.0`
+
+#### Alternative: Manual installation 
+
+This repo has the following rerequisites
+
+- Python 3.x
 - Google Earth Engine Python API
 - Jupyter Notebook
 - Py6S
-
-### Py6S
-
-[Py6S](http://py6s.readthedocs.io/en/latest/introduction.html) is a Python interface to the 6S radiative transfer code. 6S is written in FORTRAN and used by NASA/USGS for the LEDAPS (Landsat) and MODIS surface reflectance products. 
-
-### Installation
-
-The easiest way to install Py6S and all dependencies (including 6S) is through the [conda](https://conda.io/docs/installation.html) package manager.
-
-`conda config --add channels conda-forge`  
-`conda install py6s`
 
 For more information on how to install the prerequisites please see the relevant docs.
 
 - [Py6S](http://py6s.readthedocs.io/en/latest/installation.html)
 - [Google Earth Engine Python API](https://developers.google.com/earth-engine/python_install)
 - [Jupyter Notebook](http://jupyter.readthedocs.io/en/latest/install.html)
+
+### Usage
+
+To run the docker container with access to a web browser
+
+`$ docker run -i -t -p 8888:8888 samsammurphy/ee-python3-jupyter-atmcorr:v1.0`
+
+Once inside the container, authenticate Earth Engine
+
+`# earthengine authenticate`
+
+then grab the source code for this repo
+
+`# git clone https://github.com/samsammurphy/gee-atmcorr-S2`
+
+and run the example jupyter notebook
+
+`# jupyter notebook gee-atmcorr-S2/Sentinel2_Atmcorr.ipynb --ip='*' --port=8888 --allow-root`
+
+this will print out a URL that you can copy/paste into your web browser to run the code.
