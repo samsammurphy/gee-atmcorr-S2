@@ -14,7 +14,7 @@ AOT = Atmospheric.aerosol(geom,date)
 import ee
 
 class Atmospheric():
-  
+
   def round_date(date,xhour):
     """
     rounds a date of to the closest 'x' hours
@@ -43,6 +43,8 @@ class Atmospheric():
     # return closest start of month
     return ee.Date(ee.Algorithms.If(d2.gt(d1),m1,m2))
   
+  
+  
   def water(geom,date):
     """
     Water vapour column above target at time of image aquisition.
@@ -57,19 +59,21 @@ class Atmospheric():
     # H2O datetime is in 6 hour intervals
     H2O_date = Atmospheric.round_date(date,6)
     
-    #filtered water collection
-    water_ic = ee.ImageCollection('NCEP_RE/surface_wv').filterDate(H2O_date)
+    # filtered water collection
+    water_ic = ee.ImageCollection('NCEP_RE/surface_wv').filterDate(H2O_date, H2O_date.advance(1,'month'))
     
-    #water image
+    # water image
     water_img = ee.Image(water_ic.first())
     
-    #water_vapour at target
+    # water_vapour at target
     water = water_img.reduceRegion(reducer=ee.Reducer.mean(), geometry=centroid).get('pr_wtr')
                                         
-    #convert to Py6S units (Google = kg/m^2, Py6S = g/cm^2)
+    # convert to Py6S units (Google = kg/m^2, Py6S = g/cm^2)
     water_Py6S_units = ee.Number(water).divide(10)                                   
     
     return water_Py6S_units
+  
+  
   
   def ozone(geom,date):
     """
@@ -84,11 +88,10 @@ class Atmospheric():
     # Point geometry required
     centroid = geom.centroid()
        
-
     def ozone_measurement(centroid,O3_date):
       
       # filtered ozone collection
-      ozone_ic = ee.ImageCollection('TOMS/MERGED').filterDate(O3_date)
+      ozone_ic = ee.ImageCollection('TOMS/MERGED').filterDate(O3_date, O3_date.advance(1,'month'))
       
       # ozone image
       ozone_img = ee.Image(ozone_ic.first())
@@ -100,7 +103,6 @@ class Atmospheric():
       
       return ozone
       
-
     def ozone_fill(centroid,O3_date):
       """
       Gets our ozone fill value (i.e. mean value for that doy and latlon)
@@ -140,7 +142,7 @@ class Atmospheric():
     ozone_Py6S_units = ee.Number(ozone).divide(1000)# (i.e. Dobson units are milli-atm-cm )                             
     
     return ozone_Py6S_units
-      
+ 
 
   def aerosol(geom,date):
     """
@@ -152,7 +154,6 @@ class Atmospheric():
       fill value
     """
     
-
     def aerosol_fill(date):
       """
       MODIS AOT fill value for this month (i.e. no data gaps)
@@ -162,7 +163,6 @@ class Atmospheric():
                .rename(['AOT_550'])
                
                
-
     def aerosol_this_month(date):
       """
       MODIS AOT original data product for this month (i.e. some data gaps)
@@ -187,7 +187,6 @@ class Atmospheric():
       return img    
         
   
-
     def get_AOT(AOT_band,geom):
       """
       AOT scalar value for target
