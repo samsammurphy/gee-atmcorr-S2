@@ -12,7 +12,7 @@ The following [docker](https://www.docker.com/community-edition) container has a
 
 #### Alternative: Manual installation 
 
-This repo has the following rerequisites
+This repo has the following prerequisites
 
 - [Python 3.x](https://www.python.org/downloads/)
 - [Google Earth Engine Python API](https://developers.google.com/earth-engine/python_install_manual)
