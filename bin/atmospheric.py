@@ -169,7 +169,7 @@ class Atmospheric():
       """
       # image for this month
       img =  ee.Image(\
-                      ee.ImageCollection('MODIS/MOD08_M3_051')\
+                      ee.ImageCollection('MODIS/006/MOD08_M3')\
                         .filterDate(Atmospheric.round_month(date))\
                         .first()\
                      )
@@ -178,7 +178,7 @@ class Atmospheric():
       img = ee.Algorithms.If(img,\
                                # all good
                                img\
-                               .select(['Corrected_Optical_Depth_Land_Mean_Mean_550'])\
+                               .select(['Aerosol_Optical_Depth_Land_Mean_Mean_550'])\
                                .divide(1000)\
                                .rename(['AOT_550']),\
                               # missing month
