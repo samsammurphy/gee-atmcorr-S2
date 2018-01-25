@@ -27,11 +27,11 @@ To run the docker container with access to a web browser
 
 Once inside the container, authenticate Earth Engine
 
-`# earthengine authenticate`
+`earthengine authenticate`
 
 then grab the source code for this repo
 
-`# git clone https://github.com/samsammurphy/gee-atmcorr-S2`
+`git clone https://github.com/samsammurphy/gee-atmcorr-S2`
 
 and run the example jupyter notebook
 
