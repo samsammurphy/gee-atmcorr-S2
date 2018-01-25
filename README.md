@@ -35,6 +35,6 @@ then grab the source code for this repo
 
 and run the example jupyter notebook
 
-`# jupyter notebook gee-atmcorr-S2/Sentinel2_Atmcorr.ipynb --ip='*' --port=8888 --allow-root`
+`# jupyter notebook gee-atmcorr-S2/jupyer_notebooks/sentinel2_atmospheric_correction.ipynb --ip='*' --port=8888 --allow-root`
 
 this will print out a URL that you can copy/paste into your web browser to run the code.
