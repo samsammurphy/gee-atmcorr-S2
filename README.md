@@ -10,6 +10,8 @@ The following [docker](https://www.docker.com/community-edition) container has a
 
 `docker pull samsammurphy/ee-python3-jupyter-atmcorr:v1.0`
 
+You can also build a docker container from scratch using this [Dockerfile](https://github.com/gee-community/ee-jupyter-contrib/tree/master/docker/atmcorr-ee).
+
 #### Alternative: Manual installation 
 
 This repo has the following prerequisites
