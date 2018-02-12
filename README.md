@@ -56,7 +56,7 @@ With the container still running, get the containers ID with
 
 copy the ID to clipboard and run
 
-`docker commit [ID] gee-atmcorr-S2:myauth`
+`docker commit [ID] gee-atmcorr-s2:myauth`
 
 to commit the image. Now if you run
 
