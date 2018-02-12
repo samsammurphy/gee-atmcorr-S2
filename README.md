@@ -43,3 +43,29 @@ jupyter-notebook sentinel2_atmospheric_correction.ipynb --ip='*' --port=8888 --a
 ```
 
 this will print out a URL that you can copy/paste into your web browser to run the code.
+
+### Saving authentication
+
+After authenticating with `earthengine` and cloning the repository you can save the changes
+you've made to the container with `docker commit`. Docker commit will create a new image from
+a running containers current state.
+
+With the container still running, get the containers ID with
+
+`docker ps`
+
+copy the ID to clipboard and run
+
+`docker commit [ID] gee-atmcorr-S2:myauth`
+
+to commit the image. Now if you run
+
+`docker images`
+
+your newly committed image should be at the top of the list.
+
+You can now start the note book with
+
+`docker run -i -t -p 8888:8888 gee-atmcorr-S2:myauth jupyter-notebook /gee-atmcorr-S2/jupyer_notebooks/sentinel2_atmospheric_correction.ipynb --ip='*' --port=8888 --allow-root`
+
+
