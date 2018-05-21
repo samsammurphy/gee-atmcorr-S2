@@ -50,7 +50,7 @@ After authenticating with `earthengine` and cloning the repository you can save 
 you've made to the container with `docker commit`. Docker commit will create a new image from
 a running containers current state.
 
-With the container still running, get the containers ID with
+With the container still running, open a new terminal to get the container's ID:
 
 `docker ps`
 
