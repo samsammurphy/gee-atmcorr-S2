@@ -66,8 +66,10 @@ your newly committed image should be at the top of the list.
 
 You can now start the note book with
 
-`docker run -i -t -p 8888:8888 gee-atmcorr-s2:myauth 
+```
+docker run -i -t -p 8888:8888 gee-atmcorr-s2:myauth 
 
-jupyter-notebook /gee-atmcorr-S2/jupyer_notebooks/sentinel2_atmospheric_correction.ipynb --ip='*' --port=8888 --allow-root`
+jupyter-notebook /gee-atmcorr-S2/jupyer_notebooks/sentinel2_atmospheric_correction.ipynb --ip='*' --port=8888 --allow-root
+```
 
 
