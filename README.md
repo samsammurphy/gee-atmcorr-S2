@@ -44,6 +44,10 @@ jupyter-notebook sentinel2_atmospheric_correction.ipynb --ip='*' --port=8888 --a
 
 this will print out a URL that you can copy/paste into your web browser to run the code.
 
+If the URL is *http://(something_in_parentheses)* then you will need to change the parentheses and its contents for *localhost*. A valid URL should look something like..
+
+http://localhost:8888/?token=...
+
 ### Saving authentication
 
 After authenticating with `earthengine` and cloning the repository you can save the changes
