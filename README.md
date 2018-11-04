@@ -1,3 +1,14 @@
+____
+# !
+## This repo is no longer under development
+and is probably broken given the pace of the Google Earth Engine team. I am now the CEO of [Earthscope](https://earthscope.io), a startup company from [Entrepreneur First](https://joinef.com), so have no time to squash any bugs that I introduced (sorry) or that have since appeared... 
+
+The rest of the repo is 'as was', use at your own peril.
+____
+
+
+
+
 ### Introduction
 
 Atmospheric correction of Sentinel 2 imagery in Google Earth Engine using [Py6S](http://py6s.readthedocs.io/en/latest/).
