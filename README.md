@@ -8,7 +8,7 @@ Atmospheric correction of Sentinel 2 imagery in Google Earth Engine using [Py6S]
 
 The following [docker](https://www.docker.com/community-edition) container has all dependencies to run the code in this repository
 
-`docker pull samsammurphy/ee-python3-jupyter-atmcorr:v1.0`
+`docker pull samsammurphy/ee-python3-jupyter-atmcorr:v1.1`
 
 You can also build a docker container from scratch using this [Dockerfile](https://github.com/gee-community/ee-jupyter-contrib/tree/master/docker/atmcorr-ee) from the [gee-community](https://github.com/gee-community) repo.
 
@@ -25,7 +25,7 @@ This repo has the following prerequisites
 
 To run the docker container with access to a web browser
 
-`$ docker run -i -t -p 8888:8888 samsammurphy/ee-python3-jupyter-atmcorr:v1.0`
+`$ docker run -i -t -p 8888:8888 samsammurphy/ee-python3-jupyter-atmcorr:v1.1`
 
 Once inside the container, authenticate Earth Engine
 
